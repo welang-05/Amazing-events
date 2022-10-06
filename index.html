@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="style.css"> <!-- Hoja de estilo propia -->
+  <link rel="shortcut icon" href="assets/favicon2.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <!-- CSS de Bootstrap -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&display=swap" rel="stylesheet">
+</head>
+
+<body class="aparecer">
+  <div id="app" v-cloak>
+
+    <!-- Barra de Navegación -->
+    <nav class="navbar shadow  fixed-top navbar-expand-lg bg-dark pt-1 pb-1 mb-5">
+      <div class="container-fluid">
+        <!-- Para que nav ocupe todo el ancho de la página -->
+        <a class="navbar-brand aparecer m-2" href="#"><img id="logo" src="/assets/Logo2.png" alt=""></a>
+        <!-- Logo con link a la misma página -->
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> <!-- Botón de navbar colapsado -->
+
+        <div class="collapse navbar-collapse m-1" id="navbarNav">
+          <ul class="navbar-nav ms-auto sombrita">
+            <li class="nav-item m-1">
+              <a class="nav-link active text-center" aria-current="page" href="#">home</a>
+            </li>
+            <li class="nav-item m-1 ">
+              <a class="nav-link text-center enlace" href="e_upcoming.html">upcoming events</a>
+            </li>
+            <li class="nav-item m-1 enlace">
+              <a class="nav-link text-center" href="e_past.html">past events</a>
+            </li>
+            <li class="nav-item m-1 enlace">
+              <a class="nav-link text-center" href="contact.html">contact</a>
+            </li>
+            <li class="nav-item m-1 enlace">
+              <a class="nav-link text-center" href="stats.html">stats</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </nav>
+
+    <section class="encabezado pt-5 mt-5 pb-3 abajo-arriba shadow">
+      <p class="fs-3 text-light text-center fw-bold aparecer">welcome to</p>
+      <p class="fs-1 text-light text-center fw-bold aparecer">AMAZING EVENTS</p>
+    </section>
+
+    <!-- MENÚ DE CHECKBOX Y BÚSQUEDA -->
+
+    <section
+      class="container-sm d-flex flex-column align-items-center shadow-sm p-2 pb-3 text-bg-dark rounded-bottom aparecer"
+      id="menuFiltro">
+      <div class="container-fluid row justify-content-around p-2" id="Checkboxes">
+
+        <div v-for="dato in categorias" class="d-flex justify-content-center col-md-1 p-1">
+          <input class="form-check-input p-1" type="checkbox" v-model="Checkeados" :value="dato" :id="dato">
+          <label class="form-check-label ms-2" :for="dato">
+            {{dato}}
+          </label>
+        </div>
+      </div>
+      <form class="d-flex justify-content-center col-md-6 p-1 m-3" role="search">
+        <input v-model="search" class="form-control me-3" type="search"
+          placeholder="What are you searching for, in this wrecked world..." aria-label="Search">
+      </form>
+      {{Busqueda}}
+
+    </section>
+
+    <!-- EVENTOS -->
+
+    <section class="container-fluid-sm pt-4 pb-5 m-0 principal bg-transparent ">
+      <div class="container-fluid row justify-content-around" id="eventos">
+
+
+        <div v-for="(dato,i) in dataFiltrada" class="card cartola aparecer col-md-3 ms-3 p-2 mb-5"
+          :class="dataFiltrada[i].category.replace(/\s+/g, '')">
+          <div class="hidden aparecer">
+            <img :src="dato.image" class="card-img-top img-carta aparecer" alt="dataFiltrada[i].category">
+          </div>
+          <div class="card-body text-bg-dark aparecer">
+            <h5 class="card-title">{{dato.name}}</h5>
+            <p class="card-text">{{dato.description}}</p>
+            <p class="fw-bold text-center">Price: ${{dato.price}}<a :href="'details.html?id='+dato._id"
+                class="btn boton text-light ms-3">Details</a></p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <footer>
+
+      <div class="container-fluid m-0 row p-5 encabezado justify-content-between">
+        <div class="col-md-4 d-flex justify-content-around m-3">
+          <a href="" class="col-sm-1 ms-2 me-2"><img id="logo" src="/assets/facebook.png" alt=""></a>
+          <a href="" class="col-sm-1 ms-2 me-2"><img id="logo" src="/assets/instagram.png" alt=""></a>
+          <a href="" class="col-sm-1 ms-2 me-2"><img id="logo" src="/assets/whatsapp.png" alt=""></a>
+        </div>
+        <div class="col-md-3 m-3 d-flex align-items-center justify-content-center">
+          <p class="fw-bold text-center m-0">MINDHUB - Cohort 29</p>
+        </div>
+      </div>
+
+    </footer>
+
+  </div>
+
+  <script src="https://unpkg.com/vue@3"></script> <!-- JS de Vue.js -->
+  <script src="/scrips/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script> <!-- JS de Boostrap -->
+
+</body>
+
+</html>

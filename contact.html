@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css"> <!-- Hoja de estilo propia -->
+    <link rel="shortcut icon" href="assets/favicon2.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- CSS de Bootstrap -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&display=swap" rel="stylesheet"> 
+
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script> <!-- JS de Boostrap -->
+
+    <!-- Barra de Navegación -->
+    <nav class="navbar fixed-top navbar-expand-lg bg-dark pt-1 pb-1">
+        <div class="container-fluid">
+          <!-- Para que nav ocupe todo el ancho de la página -->
+          <a class="navbar-brand" href="#"><img id="logo" src="/assets/Logo2.png" alt=""></a>
+          <!-- Logo con link a la misma página -->
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button> <!-- Botón de navbar colapsado -->
+
+            <div class="collapse navbar-collapse m-1" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item m-1 enlace">
+                        <a class="nav-link text-center" href="index.html">home</a>
+                    </li>
+                    <li class="nav-item m-1 enlace">
+                        <a class="nav-link text-center" href="e_upcoming.html">upcoming events</a>
+                    </li>
+                    <li class="nav-item m-1 enlace">
+                        <a class="nav-link text-center" href="e_past.html">past events</a>
+                    </li>
+                    <li class="nav-item m-1">
+                        <a class="nav-link active text-center" aria-current="page" href="contact.html">contact</a>
+                    </li>
+                    <li class="nav-item m-1 enlace">
+                        <a class="nav-link text-center" href="stats.html">stats</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <section class="encabezado pt-5 mt-5 pb-3 abajo-arriba shadow">
+        <p class="fs-1 text-light text-center fw-bold aparecer">CONTACT</p>
+    </section>
+
+
+    <!-- CONTACTO -->
+
+    <section class="container-sm pt-4 pb-4 mb-5 principal text-bg-dark aparecer rounded-bottom">
+
+        <form action="#" method="get">
+
+            <div class="container row justify-content-center">
+                <div class="w-75">
+                    <label class="m-2" for="fname">Name:</label>
+                    <input class="w-75" type="text" name="Name" id="fname" placeholder="Enter your name here">
+                </div>
+                <div class="w-75">
+                    <label class="m-2" for="mail">Email:</label>
+                    <input class="w-75" type="email" name="Email" id="mail" placeholder="Enter your email here">
+                </div>
+                <div class="container row w-75">
+                    <label class="m-2" for="text">Message:</label>
+                    <textarea class="w-100" name="Message" id="text" cols="40" rows="10"></textarea>
+                </div>
+                <div class="d-flex row justify-content-end w-75">
+                    <input class="m-3 me-0 w-25 boton text-light" type="submit" value="SEND">
+                </div>
+            </div>
+
+        </form>
+
+    </section>
+
+    <footer>
+
+        <div class="container-fluid m-0 row p-5 encabezado justify-content-between">
+            <div class="col-md-4 d-flex justify-content-around m-3">
+              <a href="" class="col-sm-1 ms-2 me-2"><img id="logo" src="/assets/facebook.png" alt=""></a>
+              <a href="" class="col-sm-1 ms-2 me-2"><img id="logo" src="/assets/instagram.png" alt=""></a>
+              <a href="" class="col-sm-1 ms-2 me-2"><img id="logo"src="/assets/whatsapp.png" alt=""></a>
+            </div>
+            <div class="col-md-3 m-3 d-flex align-items-center justify-content-center">
+              <p class="fw-bold text-center m-0">MINDHUB - Cohort 29</p>
+            </div>
+          </div>
+
+    </footer>
+
+</body>
+
+</html>
